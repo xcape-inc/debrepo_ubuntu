@@ -103,7 +103,7 @@ jobs:
           echo importing public key
           gpg --import archive.key
           echo importing private key
-          printf '%s' "${APT_REPO_PGP_PRIV}" | gpg --allow-secret-key-import --import
+          printf '%s' "${APT_REPO_PGP_PRIV}" | base64 --decode | gpg --allow-secret-key-import --import --no-tty --batch --yes
 
       - name: sign debs not yet signed
         run: |
