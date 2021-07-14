@@ -1,6 +1,7 @@
 # debrepo_ubuntu
 Repository for apt packages for Ubuntu and generating apt repos pages
 
+Generating the gpg key
 ```bash
 sudo mkdir -p /run/user/$(id -u) && chown $(id -u):$(id -g) /run/user/$(id -u)
 export GNUPGHOME="$(mktemp -d)"
@@ -25,4 +26,20 @@ gpg --armor --export-secret-keys 'Xcape, Inc. Ubuntu Archive Automatic Signing K
 # restore in ci
 gpg --import archive.key
 printf '%s' "${APT_REPO_PGP_PRIV}" | gpg --allow-secret-key-import --import -
+```
+
+For how to generate the contents of the repo, see the github action files
+
+To use repo, do the following:
+```
+wget -qO - https://xcape-inc.github.io/debrepo_ubuntu/archive.key | sudo apt-key add -
+
+# To list and remove a key from apt sources use the following commands respectively.
+apt-key list
+
+# Register the external package repository.
+echo 'deb https://xcape-inc.github.io/debrepo_ubuntu focal universe' > /etc/apt/sources.list.d/xcape-inc.list
+
+# Refresh the apt configuration.
+sudo apt-get update
 ```
