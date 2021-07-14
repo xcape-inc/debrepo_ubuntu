@@ -127,7 +127,7 @@ jobs:
           find . -path ./REPOSITORY.PATH -prune -o -type f -name '*.deb' -print0 | xargs -n 1 -0 ./add_deb_to_repo.sh
           cp -a archive.key REPOSITORY.PATH
           sed -i "s/^\\/REPOSITORY.PATH\$//" .gitignore
-          rm .gitattributes
+          git lfs uninstall
         #  find REPOSITORY.PATH
         # Note: the gitignore and git attributes tricks allows the directory to be scanned for new info in the next step and push binaries
 
