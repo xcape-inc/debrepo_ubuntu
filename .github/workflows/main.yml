@@ -127,9 +127,9 @@ jobs:
           find . -path ./REPOSITORY.PATH -prune -o -type f -name '*.deb' -print0 | xargs -n 1 -0 ./add_deb_to_repo.sh
           cp -a archive.key REPOSITORY.PATH
           sed -i "s/^\\/REPOSITORY.PATH\$//" .gitignore
-          git lfs uninstall
+          git lfs migrate export --include="*.deb"
         #  find REPOSITORY.PATH
-        # Note: the gitignore and git attributes tricks allows the directory to be scanned for new info in the next step and push binaries
+        # Note: git lfs migrate export trick allows the directory to be scanned for new info in the next step and push binaries
 
       - name: Publish Github pages
         uses: rayluo/github-pages-overwriter@v1.2
