@@ -29,6 +29,15 @@ jobs:
 
     # Steps represent a sequence of tasks that will be executed as part of the job
     steps:
+      - name: Install git LFS extention
+        run: |
+          curl -fsSL https://github.com/git-lfs/git-lfs/releases/download/v2.13.3/git-lfs-linux-amd64-v2.13.3.tar.gz -o
+          mkdir git-lfs
+          cd git-lfs
+          tar -xvzf ../git-lfs-linux-amd64-v2.13.3.tar.gz
+          sudo ./install.sh
+          git lfs install
+
       - name: Checkout
         uses: actions/checkout@v2
 
