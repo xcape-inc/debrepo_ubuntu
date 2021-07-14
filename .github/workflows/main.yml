@@ -24,7 +24,8 @@ jobs:
     runs-on: ubuntu-latest
     # allow access to github docker registry
     permissions:
-      contents: read
+      # The rayluo/github-pages-overwriter action needs write access to the repo to update the gh_pages branch
+      contents: write
     #  packages: write
 
     # Steps represent a sequence of tasks that will be executed as part of the job
@@ -132,9 +133,6 @@ jobs:
         uses: rayluo/github-pages-overwriter@v1.2
         with:
           source-directory: REPOSITORY.PATH
-        permissions:
-          # This action needs write access to the repo to update the gh-pages branch
-          contents: write
 
       # Temp fix
       # https://github.com/docker/build-push-action/issues/252
