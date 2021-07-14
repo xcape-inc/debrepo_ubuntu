@@ -117,8 +117,12 @@ jobs:
         run: |
           echo place holder
 
-      - name: generate the repository data
+      - name: unlock the gpg key and generate the repository data
+        env:
+          APT_REPO_PGP_PRIV_PASSPHRASE: ${{ secrets.APT_REPO_PGP_PRIV_PASSPHRASE }}
         run: |
+          echo junk | gpg --local-user D46D2AE20ACF8DC5D5BDFDBE0F430EE70E6C578F --pinentry-mode loopback --passphrase "${APT_REPO_PGP_PRIV_PASSPHRASE}" --clear-sign -
+          echo "*** generating repo data ***"
           find . -path ./REPOSITORY.PATH -prune -o -type f -name '*.deb' -print0 | xargs -n 1 -0 ./add_deb_to_repo.sh
 
       - name: Publish Github pages
