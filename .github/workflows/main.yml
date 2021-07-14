@@ -96,24 +96,33 @@ jobs:
       # - name: Set up QEMU
       #   uses: docker/setup-qemu-action@v1
 
-      - shell: bash
+      - name: Import PGP keys for the repo
         env:
           APT_REPO_PGP_PRIV: ${{ secrets.APT_REPO_PGP_PRIV }}
         run: |
           echo importing pgp key
           (cat archive.key && printf '%s' "${APT_REPO_PGP_PRIV}") | gpg --allow-secret-key-import --import --no-tty --batch --yes
+          gpg --list-secret-key --with-subkey-fingerprint
 
+      - name: Install needed packages
+        env:
+          DEBIAN_FRONTEND: noninteractive
+        run: |
+          sudo apt-get update && sudo -E apt-get -o Dpkg::Options::="--force-confold" install -y
+
+      # TODO: sign debs
       - name: sign debs not yet signed
         run: |
           echo place holder
 
-      - name: generate the package list
+      - name: generate the repository data
         run: |
-          echo place holder
+          find . -path ./REPOSITORY.PATH -prune -o -iname '*.deb' -exec ./add_deb_to_repo.sh {} \;
 
       - name: Publish Github pages
-        run: |
-          echo place holder
+        uses: rayluo/github-pages-overwriter@v1.2
+        with:
+          source-directory: REPOSITORY.PATH
 
       # Temp fix
       # https://github.com/docker/build-push-action/issues/252

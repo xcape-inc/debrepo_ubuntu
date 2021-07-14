@@ -1,0 +1,9 @@
+Origin: xcape-inc.github.io/debrepo_ubuntu
+Label: xcape-inc.github.io/debrepo_ubuntu
+Suite: focal
+Version: 20.04
+Codename: focal
+Architectures: source armhf i386 arm64 amd64
+Components: universe
+Description: Xcape Ubuntu Focal 20.04
+SignWith: D46D2AE20ACF8DC5D5BDFDBE0F430EE70E6C578F
