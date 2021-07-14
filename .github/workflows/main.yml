@@ -25,7 +25,7 @@ jobs:
     # allow access to github docker registry
     permissions:
       contents: read
-      packages: write
+    #  packages: write
 
     # Steps represent a sequence of tasks that will be executed as part of the job
     steps:
@@ -125,13 +125,16 @@ jobs:
           echo "*** generating repo data ***"
           find . -path ./REPOSITORY.PATH -prune -o -type f -name '*.deb' -print0 | xargs -n 1 -0 ./add_deb_to_repo.sh
           sed -i "s/^\\/REPOSITORY.PATH\$//" .gitignore
-          find REPOSITORY.PATH
+        #  find REPOSITORY.PATH
         # Note: the gitignore trick allows the directory to be scanned for new info in the next step
 
       - name: Publish Github pages
         uses: rayluo/github-pages-overwriter@v1.2
         with:
           source-directory: REPOSITORY.PATH
+        permissions:
+          # This action needs write access to the repo to update the gh-pages branch
+          contents: write
 
       # Temp fix
       # https://github.com/docker/build-push-action/issues/252
