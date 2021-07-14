@@ -13,6 +13,7 @@ PARAMS=("$@")
 TARGET_FILE_PATH="${PARAMS[0]}"
 DISTRO_RELEASE_CODENAME="${DISTRO_RELEASE_CODENAME:-focal}"
 
+sha256sum "${TARGET_FILE_PATH}"
 (dpkg -I "${TARGET_FILE_PATH}" | grep '^ Section:') && PACKAGE_HAS_SECTION=1 || PACKAGE_HAS_SECTION=0
 
 # allows the package to default to utils if no section defined in deb
