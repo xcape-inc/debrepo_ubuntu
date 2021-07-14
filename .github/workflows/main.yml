@@ -124,6 +124,9 @@ jobs:
           echo junk | gpg --local-user D46D2AE20ACF8DC5D5BDFDBE0F430EE70E6C578F --pinentry-mode loopback --passphrase "${APT_REPO_PGP_PRIV_PASSPHRASE}" --clear-sign -
           echo "*** generating repo data ***"
           find . -path ./REPOSITORY.PATH -prune -o -type f -name '*.deb' -print0 | xargs -n 1 -0 ./add_deb_to_repo.sh
+          sed -i "s/^\\/REPOSITORY.PATH\$//" .gitignore
+          find REPOSITORY.PATH
+        # Note: the gitignore trick allows the directory to be scanned for new info in the next step
 
       - name: Publish Github pages
         uses: rayluo/github-pages-overwriter@v1.2
