@@ -1,7 +1,24 @@
 # debrepo_ubuntu
 Repository for apt packages for Ubuntu and generating apt repos pages
 
-Generating the gpg key
+To add packages to the repo, make surew git lfs is installed locally (https://docs.github.com/en/github/managing-large-files/versioning-large-files/installing-git-large-file-storage).  After cloning the repo (shallow is recomeneded, but not required with lfs), add and commit the deb and push. Thats it; packages will automatically added to the repo.
+
+To use repo, do the following:
+```
+wget -qO - https://xcape-inc.github.io/debrepo_ubuntu/archive.key | sudo apt-key add -
+
+# To list and remove a key from apt sources use the following commands respectively.
+apt-key list
+
+# Register the external package repository.
+echo 'deb https://xcape-inc.github.io/debrepo_ubuntu focal universe' | sudo tee /etc/apt/sources.list.d/xcape-inc.list
+
+# Refresh the apt configuration.
+sudo apt-get update
+```
+
+Dev notes:
+How the pgp key was generated:
 ```bash
 sudo mkdir -p /run/user/$(id -u) && chown $(id -u):$(id -g) /run/user/$(id -u)
 export GNUPGHOME="$(mktemp -d)"
@@ -29,17 +46,3 @@ printf '%s' "${APT_REPO_PGP_PRIV}" | gpg --allow-secret-key-import --import -
 ```
 
 For how to generate the contents of the repo, see the github action files
-
-To use repo, do the following:
-```
-wget -qO - https://xcape-inc.github.io/debrepo_ubuntu/archive.key | sudo apt-key add -
-
-# To list and remove a key from apt sources use the following commands respectively.
-apt-key list
-
-# Register the external package repository.
-echo 'deb https://xcape-inc.github.io/debrepo_ubuntu focal universe' | sudo tee /etc/apt/sources.list.d/xcape-inc.list
-
-# Refresh the apt configuration.
-sudo apt-get update
-```
