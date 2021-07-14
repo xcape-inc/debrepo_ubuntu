@@ -31,10 +31,10 @@ jobs:
     steps:
       - name: Install git LFS extention
         run: |
-          curl -fsSL https://github.com/git-lfs/git-lfs/releases/download/v2.13.3/git-lfs-linux-amd64-v2.13.3.tar.gz -o
+          curl -fsSL https://github.com/git-lfs/git-lfs/releases/download/v2.13.3/git-lfs-linux-amd64-v2.13.3.tar.gz -o git-lfs.tar.gz
           mkdir git-lfs
           cd git-lfs
-          tar -xvzf ../git-lfs-linux-amd64-v2.13.3.tar.gz
+          tar -xvzf ../git-lfs.tar.gz
           sudo ./install.sh
           git lfs install
 
