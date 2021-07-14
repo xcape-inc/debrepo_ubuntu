@@ -38,7 +38,7 @@ wget -qO - https://xcape-inc.github.io/debrepo_ubuntu/archive.key | sudo apt-key
 apt-key list
 
 # Register the external package repository.
-echo 'deb https://xcape-inc.github.io/debrepo_ubuntu focal universe' > /etc/apt/sources.list.d/xcape-inc.list
+echo 'deb https://xcape-inc.github.io/debrepo_ubuntu focal universe' | sudo tee /etc/apt/sources.list.d/xcape-inc.list
 
 # Refresh the apt configuration.
 sudo apt-get update
