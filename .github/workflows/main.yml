@@ -108,7 +108,7 @@ jobs:
         env:
           DEBIAN_FRONTEND: noninteractive
         run: |
-          sudo apt-get update && sudo -E apt-get -o Dpkg::Options::="--force-confold" install -y
+          sudo apt-get update && sudo -E apt-get -o Dpkg::Options::="--force-confold" install -y reprepro
 
       # TODO: sign debs
       - name: sign debs not yet signed
@@ -117,7 +117,7 @@ jobs:
 
       - name: generate the repository data
         run: |
-          find . -path ./REPOSITORY.PATH -prune -o -iname '*.deb' -exec ./add_deb_to_repo.sh {} \;
+          find . -name '*.deb' -print0 | xargs -n 1 -0 ./add_deb_to_repo.sh
 
       - name: Publish Github pages
         uses: rayluo/github-pages-overwriter@v1.2
