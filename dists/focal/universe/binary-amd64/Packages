@@ -1,0 +1,42 @@
+Package: fido2luks
+Version: 0.2.19
+Architecture: amd64
+Vcs-Browser: https://github.com/shimunn/fido2luks
+Vcs-Git: https://github.com/shimunn/fido2luks
+Homepage: https://github.com/shimunn/fido2luks
+Maintainer: shimunn <shimun@shimun.net>
+Installed-Size: 1512
+Depends: libc6 (>= 2.31), libssl1.1 (>= 1.1.1f), cryptsetup, libuuid1 (>= 2.34), libpcre2-8-0 (>= 10.34), libcryptsetup12 (>= 2:2.2.2), libblkid1 (>= 2.34), libudev1 (>= 245.4), libselinux1 (>= 3.0), libdevmapper1.02.1 (>= 2:1.02.167), libargon2-1 (>= 0~20171227), libjson-c4 (>= 0.13.1+dfsg)
+Priority: optional
+Section: utils
+Filename: pool/universe/f/fido2luks/fido2luks_0.2.19_amd64.deb
+Size: 638736
+SHA256: 393417ae2774fdaae4b1d4e5f6438e7e12bbdffde8c24745a7defd4af56925c3
+SHA1: 96382a8beb2bdfaa5b42ba5c7cbe05e9eadde201
+MD5sum: ade065fefeb2fefcb29ccde65ec8198f
+Description: Decrypt your LUKS partition using a FIDO2 compatible authenticator
+ Decrypt your LUKS partition using a FIDO2 compatible authenticator
+
+Package: rtl8814au-dkms
+Source: rtl8814au
+Version: 5.8.5.1
+Architecture: amd64
+Maintainer: jimmy <jimmy@jimmy-alpha>
+Installed-Size: 13226
+Depends: debconf (>= 0.5) | debconf-2.0, dkms (>= 2.1.0.0), linux-libc-dev, libc6-dev
+Multi-Arch: same
+Homepage: http://www.realtek.com.tw/
+Priority: optional
+Section: utils
+Filename: pool/universe/r/rtl8814au/rtl8814au-dkms_5.8.5.1_amd64.deb
+Size: 1601940
+SHA256: f0198114fd02850bb13e881b823510dc195821c5bf521fe9c5a1ae6eb927b572
+SHA1: 6b03627ce529118895382568c3e0943b380649e8
+MD5sum: 6bd8cab1abf5b11140442636b32e0077
+Description: dkms source for the rtl8814au network driver
+ rtl8814au is the Linux device driver released for the RealTek RTL8814AU WiFi
+ controllers with USB interface.
+ .
+ This package provides the dkms source code for the rtl8814au kernel module.
+ Kernel source or headers are required to compile these modules.
+

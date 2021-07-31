@@ -1,0 +1,57 @@
+Origin: xcape-inc.github.io/debrepo_ubuntu
+Label: xcape-inc.github.io/debrepo_ubuntu
+Suite: focal
+Codename: focal
+Version: 20.04
+Date: Sat, 31 Jul 2021 05:34:49 UTC
+Architectures: armhf i386 arm64 amd64
+Components: universe
+Description: Xcape Ubuntu Focal 20.04
+MD5Sum:
+ d41d8cd98f00b204e9800998ecf8427e 0 universe/binary-armhf/Packages
+ 7029066c27ac6f5ef18d660d5741979a 20 universe/binary-armhf/Packages.gz
+ cc98e637ff6334b0a91c18b76a6065ab 193 universe/binary-armhf/Release
+ d41d8cd98f00b204e9800998ecf8427e 0 universe/binary-i386/Packages
+ 7029066c27ac6f5ef18d660d5741979a 20 universe/binary-i386/Packages.gz
+ 3f0ffb984fc3daf0a5004f0d3224868d 192 universe/binary-i386/Release
+ 0c2a4d1f47ff47de600fcf73783b0735 1554 universe/binary-arm64/Packages
+ eb576622c58746c9344ee93d425feeed 825 universe/binary-arm64/Packages.gz
+ 13e5d57722e31eae85800ce4470843e6 193 universe/binary-arm64/Release
+ a28d943089280fcdb47e5939795a2c4b 1844 universe/binary-amd64/Packages
+ e385c06adcef20edcf7a42771a2615c7 952 universe/binary-amd64/Packages.gz
+ 6d4c4138e503cf8a071578535ebff225 193 universe/binary-amd64/Release
+ d41d8cd98f00b204e9800998ecf8427e 0 universe/source/Sources
+ 7029066c27ac6f5ef18d660d5741979a 20 universe/source/Sources.gz
+ 93071a49facc4fd5754e84636b42c5d6 194 universe/source/Release
+SHA1:
+ da39a3ee5e6b4b0d3255bfef95601890afd80709 0 universe/binary-armhf/Packages
+ 46c6643f07aa7f6bfe7118de926b86defc5087c4 20 universe/binary-armhf/Packages.gz
+ 6886ec27f433480f262ca692b6f4c270fea0b510 193 universe/binary-armhf/Release
+ da39a3ee5e6b4b0d3255bfef95601890afd80709 0 universe/binary-i386/Packages
+ 46c6643f07aa7f6bfe7118de926b86defc5087c4 20 universe/binary-i386/Packages.gz
+ b7234c015f99d1646178ecfbd5c8c608d0dba0a3 192 universe/binary-i386/Release
+ 985c53c1eb8e028be5697a7cb3c43b3daafebec4 1554 universe/binary-arm64/Packages
+ e39220520683edcd31ed4630a2bdcd6dde643fb2 825 universe/binary-arm64/Packages.gz
+ de232c0738d8e377c554e28741c174f6d2fee43c 193 universe/binary-arm64/Release
+ ba4bc99a52d3038fe4986c884e94719f6ed7a4ab 1844 universe/binary-amd64/Packages
+ fa0f024287669811e180c487ec96e5b99b98179e 952 universe/binary-amd64/Packages.gz
+ 28426d542e623b57db0ec9bfabee372daac7df93 193 universe/binary-amd64/Release
+ da39a3ee5e6b4b0d3255bfef95601890afd80709 0 universe/source/Sources
+ 46c6643f07aa7f6bfe7118de926b86defc5087c4 20 universe/source/Sources.gz
+ e3a6e5d4763f3a5f7e23f130703d4857020d8605 194 universe/source/Release
+SHA256:
+ e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855 0 universe/binary-armhf/Packages
+ 59869db34853933b239f1e2219cf7d431da006aa919635478511fabbfc8849d2 20 universe/binary-armhf/Packages.gz
+ 515d4d70b91924d5e0c25faf13f4bc630c4da40d150e93306c1636a39afccf7e 193 universe/binary-armhf/Release
+ e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855 0 universe/binary-i386/Packages
+ 59869db34853933b239f1e2219cf7d431da006aa919635478511fabbfc8849d2 20 universe/binary-i386/Packages.gz
+ 82fff76a1d5d09aef45d99f2e26a95cd783f5b0d79a6ad78814428e76b904306 192 universe/binary-i386/Release
+ e2c5461ea9170a33681facd6f1eaa01278edb16b47096898659251e6cedfb678 1554 universe/binary-arm64/Packages
+ 9d916082daed557b34e9f9ba6c09afb95c4cb0026ae9e331b9e82398f81cd357 825 universe/binary-arm64/Packages.gz
+ b145b053ed73999b86cc487684bf6904b194ab3a1436ad18b2d7ad4b47c69ae0 193 universe/binary-arm64/Release
+ 7aae72a012498225afe7c457153f9672cb82654a2bba827ea089915cb31246ab 1844 universe/binary-amd64/Packages
+ 3c530af014308134ccedbc9bdcc1bf549ff89b5697761615c966318284b8ac56 952 universe/binary-amd64/Packages.gz
+ fb401cff94bb5b58b0831dbf00635cac7897852cf2a7294c220cc66c795a9db2 193 universe/binary-amd64/Release
+ e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855 0 universe/source/Sources
+ 59869db34853933b239f1e2219cf7d431da006aa919635478511fabbfc8849d2 20 universe/source/Sources.gz
+ 0fcc05f3bb3f21d2e44dd74e8f6914f66f4cd4db6c8c01ce2a836ebfbfb8f778 194 universe/source/Release

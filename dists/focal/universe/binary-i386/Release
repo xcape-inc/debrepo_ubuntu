@@ -1,0 +1,7 @@
+Archive: focal
+Version: 20.04
+Component: universe
+Origin: xcape-inc.github.io/debrepo_ubuntu
+Label: xcape-inc.github.io/debrepo_ubuntu
+Architecture: i386
+Description: Xcape Ubuntu Focal 20.04
