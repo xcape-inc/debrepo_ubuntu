@@ -136,7 +136,7 @@ jobs:
         # Note: git lfs migrate export trick allows the directory to be scanned for new info in the next step and push binaries
 
       - name: Publish Github pages
-        uses: rayluo/github-pages-overwriter@v1.2
+        uses: rayluo/github-pages-overwriter@v1.3
         with:
           source-directory: REPOSITORY.PATH
 
